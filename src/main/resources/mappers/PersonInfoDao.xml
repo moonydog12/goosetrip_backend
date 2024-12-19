@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper 標籤: 用來定義操作資料庫方法的 SQL 語句 -->
+<!-- namespace: 用來綁定特定 Dao 介面 -->
+<mapper namespace="com.example.goosetrip.dao.PersonInfoDao">
+	<!-- insert 元素: 對應於 SQL 中的 insert -->
+	<!-- id: 綁定介面 dao 裡的方法名稱；等號後面的字串就是方法名稱 -->
+	<insert id="addInfo">
+		<!-- 原生SQL語法 -->
+		<!-- #{變數名稱}: 對應到 Dao 的方法參數中 @Param("變數名稱") -->
+		INSERT INTO person_info(id, user_name, user_age, city)
+		VALUES(#{inputId}, #{inputName}, #{inputAge}, #{inputCity});
+	</insert>
+</mapper>
